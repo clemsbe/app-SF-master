@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 @Service
 public class acteMedicServiceImpl extends CrudServiceImpl<ActeMedicRepository, ActeMedic, Integer> implements ActeMedicService {
     public acteMedicServiceImpl(ActeMedicRepository repository) {
+
         super(repository);
     }
 
@@ -22,37 +23,8 @@ public class acteMedicServiceImpl extends CrudServiceImpl<ActeMedicRepository, A
 
     @Override
     public List<ActeMedic> getAllActeMedics() {
+
         return repository.findAllByOrderByPositionAsc();
     }
 
 }
-
-//    @Override
-//    public Stream<ActeMedic> readAll() {
-//        Pageable pageable = PageRequest.of(0, 100);
-//
-//        return repository.findAllByOrderByPositionAsc(pageable);
-//    }
-//
-//    @Override
-//    public Stream<ActeMedic> findAllByOrderByPositionAsc() {
-//        Pageable pageable = PageRequest.of(0, 100);
-//        return repository.findAllByOrderByPositionAsc(pageable);
-//    }
-
-//    @Override
-//    public Stream<ActeMedic> findAllByOrderByPositionAsc() {
-//        Pageable pageable = PageRequest.of(0, 100);
-//        return repository.findAllByOrderByPositionAsc(pageable);
-//    }
-
-//    chatGTP :
-
-//    @Override
-//    public Stream<ActeMedic> readAll() {
-//        Pageable pageable = PageRequest.of(0, 100, Sort.by("position").ascending());
-//        Page<ActeMedic> acteMedicPage = repository.findAllByOrderByPositionAsc(pageable);
-//        List<ActeMedic> acteMedicList = acteMedicPage.getContent();
-//        return acteMedicList.stream();
-//    }
-

@@ -15,7 +15,7 @@ import java.util.List;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("patiente")
+@RequestMapping("/patiente")
 public class patienteController {
 
     private final patienteService patienteService;
@@ -25,12 +25,12 @@ public class patienteController {
         this.patienteService = patienteService;
     }
 
-    @GetMapping("")
+    @GetMapping("/ListPatiente")
     public ResponseEntity<List<PatienteDTO>> getAllAction(
-            Pageable pageable
-    ) {
-        List<PatienteDTO> patientes = this.patienteService.readAll(pageable).map(PatienteDTO::toDTO).toList();
-        return ResponseEntity.ok(patientes);
+            Pageable pageable) {
+        List<Patiente> listpatientes = patienteService.getAllPatiente();
+        List<PatienteDTO> patienteDTOs = listpatientes.stream().map(PatienteDTO::toDTO).toList();
+        return ResponseEntity.ok(patienteDTOs);
     }
 
     @PostMapping("/add")
@@ -41,6 +41,12 @@ public class patienteController {
     @GetMapping("/test")
     public String testEndpoint() {
         return "Endpoint test successful";
+    }
+
+    @DeleteMapping("/patiente/{id}")
+    public ResponseEntity<String> deletePatient(@PathVariable long id) {
+        patienteService.deletePatient(id);
+        return ResponseEntity.ok("Patient deleted successfully");
     }
 
 

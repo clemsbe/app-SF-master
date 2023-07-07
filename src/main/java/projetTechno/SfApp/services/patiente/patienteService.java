@@ -5,11 +5,17 @@ import projetTechno.SfApp.models.entities.Patiente;
 import projetTechno.SfApp.models.forms.PatienteAddForm;
 import projetTechno.SfApp.services.CrudService;
 
-public interface patienteService extends CrudService<Patiente, Integer> {
-    PatienteDTO createPatiente(PatienteAddForm patienteAddForm);
+import java.util.List;
+import java.util.stream.Stream;
 
-    Patiente create(PatienteAddForm form);
+public interface patienteService<patienteId, number> extends CrudService<Patiente, Integer> {
 
     Patiente addPatiente(Patiente patiente);
 
+    List<Patiente> getAllPatiente();
+
+//    List<Patiente> deletePatiente();
+//
+//    List<Patiente> deletePatiente(long id);
 }
+

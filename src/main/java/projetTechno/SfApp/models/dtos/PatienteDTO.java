@@ -1,7 +1,11 @@
 package projetTechno.SfApp.models.dtos;
 
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import projetTechno.SfApp.models.entities.Patiente;
 
 import java.util.Date;
@@ -10,17 +14,27 @@ import java.util.Date;
 @Builder
 public class PatienteDTO {
 
+    private Long id;
+
     private String nom;
     private String prenom;
     private Date dateDeNaissance;
-    private int numeroNational;
+    private String numeroNational;
     private String gynecologue;
     private String mutuelle;
-
-    private int nTelephone;
-
     private String mail;
+    private String numeroDeTelephone;
+    private String ville;
 
+    private String rue;
+
+    private String numeroDeMaison;
+
+    private String lieuDit;
+
+    private String traitSpec;
+
+    private int km;
 
     public static PatienteDTO toDTO(Patiente patiente) {
         PatienteDTO.PatienteDTOBuilder dto = PatienteDTO.builder();
@@ -31,8 +45,14 @@ public class PatienteDTO {
                 .numeroNational(patiente.getNumeroNational())
                 .gynecologue(patiente.getGynecologue())
                 .mutuelle(patiente.getMutuelle())
-                .nTelephone(patiente.getNTelephone())
+                .numeroDeTelephone(patiente.getNumeroDeTelephone())
                 .mail(patiente.getMail())
+                .ville(patiente.getVille())
+                .rue(patiente.getRue())
+                .numeroDeMaison(patiente.getNumeroDeMaison())
+                .lieuDit(patiente.getLieuDit())
+                .traitSpec(patiente.getTraitSpec())
+                .km(patiente.getKm())
                 .build();
     }
 

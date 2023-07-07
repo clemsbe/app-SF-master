@@ -3,8 +3,6 @@ package projetTechno.SfApp.models.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.yaml.snakeyaml.events.Event;
-
 import java.util.Date;
 import java.util.List;
 
@@ -32,17 +30,39 @@ public class Patiente {
     private Date dateDeNaissance;
     @Column
     @NotNull
-    private int numeroNational;
+    private String numeroNational;
     @Column
     private String gynecologue;
     @Column
     @NotNull
     private String mutuelle;
-    @Column
-    @NotNull
-    private int nTelephone;
+
     @Column
     private String mail;
+    @Column
+    @NotNull
+    private String numeroDeTelephone;
+    @Column
+    @NotNull
+
+    private String ville;
+    @Column
+    @NotNull
+
+    private String rue;
+    @Column
+    @NotNull
+
+    private String numeroDeMaison;
+    @Column
+
+    private String lieuDit;
+    @Column
+
+    private String traitSpec;
+    @Column
+
+    private int km;
 
 @ManyToMany
 private List<Adresse> adressesList;
