@@ -24,7 +24,7 @@ public class Patiente {
     private String nom;
     @Column
     @NotNull
-    private String prenom;
+     private String prenom;
     @Column
     @NotNull
     private Date dateDeNaissance;

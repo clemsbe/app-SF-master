@@ -3,13 +3,15 @@ package projetTechno.SfApp.services;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import projetTechno.SfApp.exceptions.HttpNotFoundException;
+import projetTechno.SfApp.models.entities.Patiente;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 public abstract class CrudServiceImpl<
-        Repository extends JpaRepository,
+        Repository extends JpaRepository<TEntity, TKey>,
         TEntity,
         TKey extends Serializable
         > implements CrudService<TEntity, TKey> {
@@ -50,6 +52,4 @@ public abstract class CrudServiceImpl<
     public Stream<TEntity> readAll(Pageable pageable) {
         return this.repository.findAll(pageable).stream();
     }
-
-
 }

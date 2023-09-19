@@ -15,6 +15,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public interface PatienteRepository extends JpaRepository<Patiente, Long>, JpaSpecificationExecutor {
     List<Patiente> findAll();
 
-        List<Patiente> delete();
+//        List<Patiente> delete();
 }
 
