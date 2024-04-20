@@ -1,9 +1,8 @@
 Baudouin Pauline
 Sage-Femme
-Rue de Bourlers, 2B
+
 6460 Chimay
-0496.555.066
-4-00250-72-003								Date
+  							Date
 
 Texte : 
 
@@ -11,4 +10,4 @@ Veuillez trouver ci-après le récapitulatif des soins apportés à madame .....
 affiliée chez vous sous le n° .....................
 pour laquelle je souhaite bénéficier du tiers-payant en vertu de l'AR du 18 septembre 2015.
 
-D'avance je vous remercie de verser le montant du remboursement sur mon compte : BE19.7320.5824.4612
+D'avance je vous remercie de verser le montant du remboursement sur mon compte : 
